@@ -1,0 +1,80 @@
+.ngx-cc-form-field {
+    width: 100%;
+}
+
+.cc-form {
+    width: 50%;
+    margin: auto;
+    border: 1px solid #ddd;
+    padding: 30px;
+}
+
+.cc-date-cvv-container {
+    display: flex;
+    justify-content: center;
+    & > *:not(:last-child) {
+        margin-right: 30px;
+    }
+}
+
+.main-container {
+    padding: 30px;
+    text-align: center;
+}
+
+.btn-container {
+    text-align: right;
+}
+
+.basic-html {
+    padding-top: 3rem;
+}
+
+.heading-normal {
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 2rem;
+}
+
+.space-even {
+    margin: 10px 0;
+    justify-content: space-between;
+}
+.btn-purchase {
+    display: block;
+    margin-left: auto;
+}
+
+.code {
+    text-align: initial;
+    background-color: #eee;
+}
+
+:host ::ng-deep .default-input {
+    input {
+        height: 35px;
+        width: 100%;
+        border: 1px solid #a8a8a8;
+    }
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.components-container {
+    text-align: left;
+}
+.heading-components {
+    margin-bottom: 20px;
+}
+
+.description {
+    text-align: left;
+}
+.description-comp {
+    display: flex;
+    align-items: center;
+}
