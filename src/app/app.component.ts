@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   html = `
   <form class="cc-form" [formGroup]="form">
     <mat-form-field class="ngx-cc-form-field">
-      <ngx-cc name="cardNumber" styleClass="card" formControlName="creditCard"></ngx-cc>
+      <ngx-cc name="cardNumber" styleClass="card" formControlName="creditCard" #creditCard></ngx-cc>
       <mat-placeholder>0000 0000 0000 0000</mat-placeholder>
       <mat-error *ngIf="form.controls.creditCard.invalid">Card number is not valid</mat-error>
     </mat-form-field>
@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
           <mat-error *ngIf="form.controls.creditCardDate.invalid">Expiration date is not valid</mat-error>
       </mat-form-field>
       <mat-form-field class="ngx-cc-form-field">
-          <ngx-cc-cvv formControlName="creditCardCvv"></ngx-cc-cvv>
+          <ngx-cc-cvv formControlName="creditCardCvv" [cvv-size]="creditCard.card?.code.size"></ngx-cc-cvv>
           <mat-placeholder>CVV</mat-placeholder>
           <mat-error *ngIf="form.controls.creditCardCvv.invalid">Security code is not valid</mat-error>
       </mat-form-field>
@@ -59,7 +59,7 @@ export class AppComponent implements OnInit {
     <form class="cc-form" [formGroup]="withoutMaterialForm">
         <div class="form-group">
             <ngx-cc defaultStyles placeholder="0000 0000 0000 0000" required="true" styleClass="default-input"
-                name="cardNumber" formControlName="creditCardeWithoutMaterial"></ngx-cc>
+                name="cardNumber" formControlName="creditCardeWithoutMaterial" #creditCard></ngx-cc>
             <span
                 *ngIf="withoutMaterialForm.controls.creditCardeWithoutMaterial.invalid && withoutMaterialForm.controls.creditCardeWithoutMaterial.touched">
                 Card number is not valid
@@ -77,6 +77,7 @@ export class AppComponent implements OnInit {
             </div>
             <div class="form-group">
                 <ngx-cc-cvv defaultStyles styleClass="default-input" placeholder="CVV"
+                    [cvv-size]="creditCard.card?.code.size"
                     formControlName="creditCardCvvWithoutMaterial"></ngx-cc-cvv>
                 <span
                     *ngIf="withoutMaterialForm.controls.creditCardCvvWithoutMaterial.invalid && withoutMaterialForm.controls.creditCardCvvWithoutMaterial.touched">
